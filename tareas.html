@@ -186,19 +186,23 @@
 <button onclick="calcular()">Calcular</button>
 
 <div id="result"></div>
-
+    <h1>E:4 Calculo de factorial</h1>
+<label for="factorial">introduce el numero:</label>
+<input type="number" id="factorial" min="0" required>
+<button onclick="calcular()">Calcular</button>
+<div id="result"></div>
 <script>
     function calcular() {
-        const factorial = parseFloat(document.getElementById('factorial').value);
-        const resultDiv = document.getElementById('factorial');
+        const factorialInput = parseFloat(document.getElementById('factorial').value);
+        const resultDiv = document.getElementById('result');
         resultDiv.innerHTML = ''; 
-
-        const factorial = factorial! ;
-        
-
+        // Calcular el factorial
+        let factorial = 1;
+        for (let i = 1; i <= factorialInput; i++) {
+            factorial *= i;
+        }
         resultDiv.innerHTML = `
-            <p>factorial: ${factorial.toFixed(2)}</p>
-            
+            <p>factorial: ${factorial}</p>
         `;
     }
 </script>
